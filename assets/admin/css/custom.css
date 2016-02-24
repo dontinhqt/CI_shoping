@@ -1,0 +1,65 @@
+/* Add here all your css styles (customizations) */
+.bg-color-head{
+	background-color: #cff3af;
+}
+/* start - table */
+table {
+	border-collapse: collapse;
+	margin: auto;
+}
+th strong {
+	color: #fff;
+}
+th {
+	background: #93BC0C;
+	height: 29px;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: #FFF;
+	text-align: center;
+	border-left: 1px solid #B6D59A;
+	border-bottom: solid 2px #FFF;
+}
+tr {
+	height: 30px;
+}
+td {
+	padding-left: 11px;
+	padding-right: 11px;
+	border-left: 1px solid #FFF;
+	border-bottom: solid 1px #ffffff;
+}
+td.first,th.first {
+	border-left: 0px;
+}
+tr.row-a {
+	background: #F8F8F8;
+}
+tr.row-b {
+	background: #EFEFEF;
+}
+/* end - table */
+
+.cm{
+border:1px solid #999999;
+margin-top:5px;
+padding:8px;
+background:#D3EFFE;
+}
+
+.cm p{
+padding:0px;
+}
+
+.cmtsub{
+border:1px solid #999999;
+margin-top:5px;
+padding:8px;
+background:#FEE8DA;
+}
+.alert {
+    border-radius: 0;
+}
+* {
+    border-radius: 0;
+}
