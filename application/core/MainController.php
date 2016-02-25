@@ -11,6 +11,8 @@ class MainController extends MY_Controller{
 		$this->load->library("cart");
 		$this->load->helper('form');
 
+		
+		
 		$this->load->model("Mcategorie");
 		// $config['baseurl']=base_url()."default/news/viewcate";
 		$this->load->library("Menu");

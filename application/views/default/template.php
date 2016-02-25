@@ -72,6 +72,12 @@
 <script src="<?php echo base_url();?>assets/<?php echo $module; ?>/js/ttmenu.js"></script>
 <script src="<?php echo base_url();?>assets/<?php echo $module; ?>/js/custom.js"></script>
 <script src="<?php echo base_url();?>assets/<?php echo $module; ?>/js/menu.js"></script>
+<script src="<?php echo base_url();?>assets/<?php echo $module; ?>/js/autocomplete.js"></script>
+<script>
+$(document).ready(function(){
+  $("#left ul:first").attr("id","verticalmenu");
+})
+</script>
 <script>
 
 cdtd();</script>

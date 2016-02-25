@@ -3,6 +3,7 @@ class Category extends AdminController {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Mcategorie");
+        $this->load->library('NestedsetBie', array('table' => 'category'));
 
 	}
 
@@ -17,6 +18,11 @@ class Category extends AdminController {
         $this->load->view($this->_data['path'],$this->_data);
 
 	}
+    public function nestedset(){
+        $this->nestedsetbie->get();
+        $this->nestedsetbie->recursive(0, $this->nestedsetbie->set());
+        $this->nestedsetbie->action();
+    }
     public function add(){
     	$this->load->helper("menu");
     	$this->load->library("form_validation");
@@ -36,6 +42,7 @@ class Category extends AdminController {
 	            );
 	            $this->Mcategorie->insertCate($data_insert);
 	            $this->session->set_flashdata('flash_mess','Thêm chuyên mục thành công');
+                $this->nestedset();
 	            redirect(base_url()."admin/category/index");
 
         	}
@@ -48,6 +55,7 @@ class Category extends AdminController {
         $this->load->model("Mcategorie");
         $this->Mcategorie->deleteCate($param);
         $this->session->set_flashdata("flash_mess","Xóa category thành công");
+        $this->nestedset();
         redirect(base_url()."admin/category/index");
     }
 
@@ -69,6 +77,7 @@ class Category extends AdminController {
             );
             $this->Mcategorie->updateCate($data_update,$param);
             $this->session->set_flashdata("flash_mess","Sửa danh mục thành công !!!");
+            $this->nestedset();
             redirect(base_url()."admin/category/index");
         }
 

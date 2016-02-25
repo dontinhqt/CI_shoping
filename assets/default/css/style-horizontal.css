@@ -2,14 +2,15 @@
 /* CSS Document */
 
 
-@import url("../../../../../../netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css") @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css") @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,600);
 body {
 	font-family: 'Raleway', sans-serif;
 	color: #555555;
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
-	background-color: #FCF8F8;
+	/*background-color: #FCF8F8;*/
+	background-color: #46DCA2;
 }
 .border-test {
 	border: 1px solid;
