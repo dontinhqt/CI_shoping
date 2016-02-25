@@ -15,5 +15,4 @@ $route['thanh-toan']="default/sanpham/thanhtoan";
 $route['thanh-toan-thanh-cong']="default/sanpham/save_order";
 
 $route['tat-ca-san-pham']="default/sanpham/allproduct";
-
-
+$route['loai-san-pham/(:num)-(:any)']="default/sanpham/GetproductByCategory/$1";

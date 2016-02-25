@@ -18,4 +18,5 @@
 </div>
 <div class="paging">
   <?php echo $pagelink;?>
-</div>
+
+</div><?php print_r($pagelink); ?>

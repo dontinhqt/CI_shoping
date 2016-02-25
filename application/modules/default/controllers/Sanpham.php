@@ -33,6 +33,37 @@ class Sanpham extends MainController
 
 		$this->load->view($this->_data['path'],$this->_data);
 	}
+
+    public function GetproductByCategory($ao_id){
+        $start=$this->uri->segment(5);
+        $this->load->model('Mcategorie');
+        $result = $this->Mcategorie->getCateById($ao_id);
+        $this->_data['titlePage']=$result['cate_title'];
+        $this->_data['loadPage']="sanpham/sanpham_danhmuc";
+        if(isset($result) && is_array($result) && count($result)){
+        $this->db->select('*');
+        $this->db->from('product');
+
+        $this->db->limit(8,$start);
+        $this->db->order_by("id","desc");
+
+        $this->db->where('(category IN (SELECT cate_id FROM category WHERE lft >= '.$result['lft'].' AND rgt <= '.$result['rgt'].'))');
+        $result_2 = $this->db->get()->result_array();
+        $this->_data['sanpham'] = $result_2;
+        }
+        $this->db->from('product');
+        $this->db->where('(category IN (SELECT cate_id FROM category WHERE lft >= '.$result['lft'].' AND rgt <= '.$result['rgt'].'))');
+        $total_record = $this->db->count_all_results();
+        $config["total_rows"]=$total_record;
+        $config["per_page"]=8;
+        $config["base_url"]=base_url()."default/sanpham/GetproductByCategory/".$ao_id;
+        $config["uri_segment"]=5;
+        $this->load->library("pagination",$config);
+        $this->_data['pagelink']=$this->pagination->create_links();
+
+
+        $this->load->view($this->_data['path'],$this->_data);
+    }
 	public function giohang(){
 		$id=$this->uri->segment(2);
 		$this->_data['titlePage']="Giỏ Hàng Site";

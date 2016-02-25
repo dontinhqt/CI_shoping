@@ -1,96 +1,3 @@
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script>
-function to_slug(str){
-    // Chuyển hết sang chữ thường
-    str = str.toLowerCase();
-    str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
-    str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
-    str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
-    str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
-    str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
-    str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
-    str = str.replace(/(đ)/g, 'd');
-    // Xóa ký tự đặc biệt
-    str = str.replace(/([^0-9a-z-\s])/g, '');
-    // Xóa khoảng trắng thay bằng ký tự -
-    str = str.replace(/(\s+)/g, '-');
-    // xóa phần dự - ở đầu
-    str = str.replace(/^-+/g, '');
-    // xóa phần dư - ở cuối
-    str = str.replace(/-+$/g, '');
-    return str;
-}
-  $(document).ready(function () {
-    $("#prodcut").keyup(function () {
-      $.ajax({
-        type: "POST",
-        url: baseurl+"default/autocomplete/GetProdcutName",
-        data: {
-        keyword: $("#prodcut").val()
-        },
-        dataType: "json",
-        success: function (data) {
-          if (data.length > 0) {
-            $('#Dropdownprodcut').empty();
-            $('#prodcut').attr("data-toggle", "dropdown");
-            $('#Dropdownprodcut').dropdown('toggle');
-          }
-          else if (data.length == 0) {
-            $('#prodcut').attr("data-toggle", "");
-          }
-          $.each(data, function (key,value) {
-            if (data.length >= 0)
-              $('#Dropdownprodcut').append('<a href="'+baseurl+'san-pham/'+value['id']+'-'+value['name']+'.html"><li role="presentation" >' + value['name'] + '</li></a>');
-              // $('#Dropdownprodcut').append('<li role="presentation" >' + value['name'] + '</li>');
-          });
-        }
-      });
-    });
-    $('ul.txtprodcut').on('click', 'li a', function () {
-      $('#prodcut').val($(this).text());
-    });
-  });
-</script> -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $("#country").keyup(function () {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost/shoping/default/autocomplete/GetCountryName",
-            data: {
-                keyword: $("#country").val()
-            },
-            dataType: "json",
-            success: function (data) {
-                if (data.length > 0) {
-                    $('#DropdownCountry').empty();
-                    $('#country').attr("data-toggle", "dropdown");
-                    $('#DropdownCountry').dropdown('toggle');
-                }
-                else if (data.length == 0) {
-                    $('#country').attr("data-toggle", "");
-                }
-                $.each(data, function (key,value) {
-                    if (data.length >= 0)
-                        $('#DropdownCountry').append('<li role="presentation" >' + value['name'] + '</li>');
-                });
-            }
-        });
-    });
-    $('ul.txtcountry').on('click', 'li a', function () {
-        $('#country').val($(this).text());
-    });
-});
-</script>
-
-
-
-
 <header>
   <div class="header clearfix">
     <div class="container">
@@ -107,14 +14,8 @@ function to_slug(str){
         <!-- END Logo -->
         <div class="col-md-6 col-sm-7 col-xs-12">
           <div class="header-search">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-4" style="margin-top: 200px;">
-               <label class="control-lable">Country Name</label>
-               <input type="text" id="country" autocomplete="off" name="country" class="form-control" placeholder="Start typing and see the magic! :P">        
-               <ul class="dropdown-menu txtcountry" style="margin-left:15px;margin-right:0px;" role="menu" aria-labelledby="dropdownMenu"  id="DropdownCountry">
-               </ul>
-             </div>
-           </div>
+
+
 
           </div>
         </div>
@@ -168,8 +69,6 @@ function to_slug(str){
                   </div>
                 </li>
                 <li>
-                  <!-- <p class="text-left"><span class="font-bold">Giỏ hàng<br>
-                    $ 260.00</p> -->
                 <div class="empty text-left"><?php $cart_check = $this->cart->contents();
                         if(empty($cart_check)) {
                       echo 'Giỏ hàng!';
@@ -199,7 +98,7 @@ function to_slug(str){
                 <ul class="nav navbar-nav">
                   <li class="dropdown ttmenu-full"><a href="<?php echo base_url(); ?>">Trang Chủ</a>
                   </li>
-                  <li class="dropdown ttmenu-full"><a href="tat-ca-san-pham.html">Sản Phẩm</a> </li>
+                  <li class="dropdown ttmenu-full"><a href="<?php echo base_url(); ?>/tat-ca-san-pham.html">Sản Phẩm</a> </li>
                   <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Giới Thiệu</a> </li>
                   <li class="dropdown ttmenu-full"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Liên Hệ</a> </li>
                 </ul>

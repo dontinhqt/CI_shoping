@@ -9,8 +9,8 @@ body {
 	color: #555555;
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
-	/*background-color: #FCF8F8;*/
-	background-color: #46DCA2;
+	background-color: #FCF8F8;
+	/*background-color: #46DCA2;*/
 }
 .border-test {
 	border: 1px solid;

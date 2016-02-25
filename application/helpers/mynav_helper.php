@@ -32,12 +32,10 @@ if(!function_exists('item')){
 		$CI->db->flush_cache();
 		if(isset($result) && is_array($result) && count($result)){
 			foreach($result as $key => $val){
-				
 				$result[$key]['subitems'] = subitem(array('lft' => $val['lft'],'rgt' => $val['rgt']));
 			}
 		}
 		return $result;
-		
 	}
 }
 

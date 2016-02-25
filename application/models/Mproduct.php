@@ -27,9 +27,10 @@ class Mproduct extends CI_Model {
         return $this->db->get($this->_table)->result_array();
     }
     public function getProductById($id){
-		$this->db->where("id",$id);
-		return $this->db->get($this->_table)->row_array();
-	}
+        $this->db->where("id",$id);
+        return $this->db->get($this->_table)->row_array();
+    }
+
     public function updateViewProduct($data,$id){
         $this->db->where("id",$id);
         $this->db->update($this->_table,$data);
