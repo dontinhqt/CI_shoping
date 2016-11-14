@@ -43,7 +43,13 @@
 	 <?php $this->load->view($loadPage);?>
   </div>
   <div class="col-md-3">
-    <?php $this->load->view("$module/menu_right");?>
+    <?php
+    if (uri_string()!="thanh-toan") {
+      $this->load->view("$module/menu_right");
+    }
+   
+    // $this->load->view("$module/menu_right");
+    ?>
   </div>
 
 </div>

@@ -1,4 +1,4 @@
-<h3 class="title text-center text-primary"><span>SẢN PHẨM XEM NHIỀU</span></h3>
+<h3 class="title text-center text-primary"><span> SẢN PHẨM XEM NHIỀU</span></h3>
 <div class="pro-sec clearfix wow bounceInUp" data-wow-duration="2s">
   <?php
     foreach ($xemnhieu as $value) {

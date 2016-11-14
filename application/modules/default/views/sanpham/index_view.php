@@ -11,7 +11,7 @@
 </div>
 <div class="col-md-12">
 	<div class="col-md-4">
-		<img id="zoom_01" src="<?php echo base_url();?>uploads/images/<?php echo $info['image'];?>" style='width:300px;height: 300px;' data-zoom-image="<?php echo base_url();?>uploads/images/<?php echo $info['image'];?>" alt="<?php echo $info['name'];?>">
+		<img id="zoom_01" src="<?php echo base_url();?>uploads/images/<?php echo $info['image'];?>" style='width:250px;height: 300px;' data-zoom-image="<?php echo base_url();?>uploads/images/<?php echo $info['image'];?>" alt="<?php echo $info['name'];?>">
 	</div>
 	<script>
 	    $("#zoom_01").elevateZoom({scrollZoom : true});
